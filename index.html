@@ -3,863 +3,686 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="La Vaca en Pijama - Pijamas, ropa para dormir y accesorios para descansar con estilo.">
+    <title>La Vaca en Pijama | Sueña bonito</title>
 
-    <title>La Vaca en Pijama | Pijamas, ropa y accesorios para dormir</title>
-
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
     <style>
+        :root {
+            --pink: #c991a5;
+            --pink-dark: #ad7189;
+            --pink-light: #f4dfe6;
+            --cream: #fcf8f5;
+            --beige: #eadfd7;
+            --brown: #40373a;
+            --gray: #75676c;
+            --white: #ffffff;
+        }
+
         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             scroll-behavior: smooth;
         }
 
         body {
             font-family: 'DM Sans', sans-serif;
+            background: var(--cream);
+            color: var(--brown);
         }
 
-        .font-display {
+        h1, h2, h3 {
             font-family: 'Playfair Display', serif;
         }
 
-        .hero-pattern {
+        .hero-bg {
             background:
-                radial-gradient(circle at 10% 20%, rgba(214, 178, 191, 0.18) 0, transparent 28%),
-                radial-gradient(circle at 90% 80%, rgba(226, 198, 173, 0.20) 0, transparent 28%);
+                radial-gradient(circle at 10% 20%, rgba(201, 145, 165, 0.22), transparent 30%),
+                radial-gradient(circle at 90% 80%, rgba(234, 223, 215, 0.8), transparent 35%),
+                var(--cream);
         }
 
-        .card-hover {
-            transition: all 0.35s ease;
+        .product-card {
+            transition: transform .3s ease, box-shadow .3s ease;
         }
 
-        .card-hover:hover {
+        .product-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(72, 55, 63, 0.12);
+            box-shadow: 0 18px 40px rgba(64, 55, 58, .12);
         }
 
-        .float {
-            animation: float 4s ease-in-out infinite;
+        .category-card {
+            transition: transform .3s ease;
         }
 
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
+        .category-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .btn-main {
+            background: var(--pink);
+            transition: all .3s ease;
+        }
+
+        .btn-main:hover {
+            background: var(--pink-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--pink);
+            color: var(--pink-dark);
+            transition: all .3s ease;
+        }
+
+        .btn-outline:hover {
+            background: var(--pink);
+            color: white;
+        }
+
+        .floating-whatsapp {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: #25D366;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 27px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, .18);
+            z-index: 100;
+            transition: transform .3s ease;
+        }
+
+        .floating-whatsapp:hover {
+            transform: scale(1.1);
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            width: 55px;
+            height: 3px;
+            transform: translateX(-50%);
+            background: var(--pink);
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.8rem;
+                line-height: 1.1;
             }
 
-            50% {
-                transform: translateY(-10px);
+            .floating-whatsapp {
+                width: 52px;
+                height: 52px;
+                right: 16px;
+                bottom: 16px;
             }
-        }
-
-        .fade-up {
-            animation: fadeUp 0.8s ease forwards;
-        }
-
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(25px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .mobile-menu {
-            transition: all 0.3s ease;
         }
     </style>
 </head>
 
-<body class="bg-[#fcf8f5] text-[#51464a] antialiased">
+<body>
 
-    <!-- NAVBAR -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-[#eadfe0]">
-
-        <div class="max-w-7xl mx-auto px-5 lg:px-8 h-20 flex items-center justify-between">
+    <header class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-pink-100">
+        <nav class="max-w-7xl mx-auto px-5 lg:px-8 h-20 flex items-center justify-between">
 
             <a href="#inicio" class="flex items-center gap-3">
-
-                <div class="w-11 h-11 rounded-2xl bg-[#c991a5] text-white flex items-center justify-center shadow-lg shadow-[#c991a5]/20">
-                    <span class="text-2xl">🐮</span>
+                <div class="w-11 h-11 rounded-full bg-[var(--pink-light)] flex items-center justify-center text-2xl">
+                    🐄
                 </div>
 
                 <div>
-                    <p class="text-xl font-extrabold text-[#40373a] leading-none">
-                        La Vaca <span class="text-[#c991a5]">en Pijama</span>
-                    </p>
-
-                    <p class="text-[10px] uppercase tracking-[0.2em] text-[#a8959b] font-bold mt-1">
+                    <h1 class="text-xl md:text-2xl font-bold leading-none">
+                        La Vaca en Pijama
+                    </h1>
+                    <span class="text-xs text-[var(--gray)]">
                         Sueña bonito
-                    </p>
+                    </span>
                 </div>
-
             </a>
 
-            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-[#66595e]">
+            <div class="hidden md:flex items-center gap-8 text-sm font-semibold">
+                <a href="#inicio" class="hover:text-[var(--pink-dark)] transition">Inicio</a>
+                <a href="#categorias" class="hover:text-[var(--pink-dark)] transition">Categorías</a>
+                <a href="#productos" class="hover:text-[var(--pink-dark)] transition">Productos</a>
+                <a href="#nosotros" class="hover:text-[var(--pink-dark)] transition">Nosotros</a>
 
-                <a href="#inicio" class="hover:text-[#c991a5] transition">
-                    Inicio
-                </a>
-
-                <a href="#categorias" class="hover:text-[#c991a5] transition">
-                    Categorías
-                </a>
-
-                <a href="#productos" class="hover:text-[#c991a5] transition">
-                    Productos
-                </a>
-
-                <a href="#nosotros" class="hover:text-[#c991a5] transition">
-                    Nosotros
-                </a>
-
-                <a href="#contacto"
-                   class="bg-[#c991a5] text-white px-5 py-3 rounded-xl hover:bg-[#b97f95] transition shadow-lg shadow-[#c991a5]/20">
+                <a href="https://wa.me/573157212081?text=Hola%20La%20Vaca%20en%20Pijama%2C%20quiero%20hacer%20una%20consulta."
+                   target="_blank"
+                   class="btn-main text-white px-5 py-3 rounded-full">
                     Comprar
                 </a>
-
-            </nav>
-
-            <button id="menu-btn"
-                    class="md:hidden w-11 h-11 rounded-xl bg-[#f4e9ec] flex items-center justify-center text-[#66595e]">
-
-                <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M4 6h16M4 12h16M4 18h16"/>
-                </svg>
-
-            </button>
-
-        </div>
-
-        <!-- MENU MOBILE -->
-        <div id="mobile-menu"
-             class="hidden md:hidden bg-white border-t border-[#eadfe0] px-5 py-5">
-
-            <div class="flex flex-col gap-2">
-
-                <a href="#inicio"
-                   class="px-4 py-3 rounded-xl hover:bg-[#f9eff2] hover:text-[#c991a5] transition">
-                    Inicio
-                </a>
-
-                <a href="#categorias"
-                   class="px-4 py-3 rounded-xl hover:bg-[#f9eff2] hover:text-[#c991a5] transition">
-                    Categorías
-                </a>
-
-                <a href="#productos"
-                   class="px-4 py-3 rounded-xl hover:bg-[#f9eff2] hover:text-[#c991a5] transition">
-                    Productos
-                </a>
-
-                <a href="#nosotros"
-                   class="px-4 py-3 rounded-xl hover:bg-[#f9eff2] hover:text-[#c991a5] transition">
-                    Nosotros
-                </a>
-
-                <a href="#contacto"
-                   class="mt-2 text-center bg-[#c991a5] text-white px-4 py-3 rounded-xl font-bold">
-                    Comprar
-                </a>
-
             </div>
-        </div>
+
+            <a href="https://wa.me/573157212081?text=Hola%20La%20Vaca%20en%20Pijama%2C%20quiero%20hacer%20una%20consulta."
+               target="_blank"
+               class="md:hidden btn-main text-white px-4 py-2 rounded-full text-sm font-semibold">
+                Comprar
+            </a>
+        </nav>
     </header>
 
 
-    <!-- HERO -->
-    <section id="inicio"
-             class="relative min-h-screen pt-32 pb-20 flex items-center overflow-hidden hero-pattern">
+    <main>
 
-        <div class="max-w-7xl mx-auto px-5 lg:px-8 w-full">
+        <section id="inicio" class="hero-bg min-h-screen pt-28 flex items-center">
+            <div class="max-w-7xl mx-auto px-5 lg:px-8 w-full">
 
-            <div class="grid lg:grid-cols-2 gap-14 items-center">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
 
-                <!-- TEXTO -->
-                <div class="text-center lg:text-left fade-up">
+                    <div>
+                        <span class="inline-block bg-[var(--pink-light)] text-[var(--pink-dark)] px-4 py-2 rounded-full text-sm font-bold mb-6">
+                            ✨ Tu momento de descansar
+                        </span>
 
-                    <div class="inline-flex items-center gap-2 bg-[#f7e9ed] border border-[#ead5dc] text-[#b4778d] px-4 py-2 rounded-full text-sm font-bold mb-6">
-                        <span class="w-2 h-2 bg-[#c991a5] rounded-full"></span>
-                        Pijamas para sentirte cómoda
+                        <h2 class="hero-title text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+                            Duerme bonito,
+                            <span class="text-[var(--pink-dark)]">siéntete increíble.</span>
+                        </h2>
+
+                        <p class="text-lg md:text-xl text-[var(--gray)] leading-relaxed max-w-xl mb-8">
+                            Encuentra pijamas, accesorios y prendas cómodas para convertir cada noche en tu momento favorito del día.
+                        </p>
+
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#productos"
+                               class="btn-main text-white px-7 py-4 rounded-full font-bold">
+                                Ver productos
+                            </a>
+
+                            <a href="https://wa.me/573157212081?text=Hola%20La%20Vaca%20en%20Pijama%2C%20quiero%20conocer%20el%20cat%C3%A1logo."
+                               target="_blank"
+                               class="btn-outline px-7 py-4 rounded-full font-bold">
+                                Pedir por WhatsApp
+                            </a>
+                        </div>
                     </div>
 
-                    <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-[#40373a] leading-[1.05]">
-
-                        Duerme bonito,
-                        <span class="text-[#c991a5]">siéntete increíble.</span>
-
-                    </h1>
-
-                    <p class="mt-7 text-lg text-[#75676c] leading-relaxed max-w-xl mx-auto lg:mx-0">
-
-                        En <strong class="text-[#40373a]">La Vaca en Pijama</strong>
-                        encuentras pijamas, batas y accesorios para dormir
-                        cómodamente y darle un toque especial a tus noches.
-
-                    </p>
-
-                    <div class="mt-9 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-
-                        <a href="https://wa.me/5732233506152?text=Hola%20La%20Vaca%20en%20Pijama,%20quiero%20ver%20el%20cat%C3%A1logo"
-                           target="_blank"
-                           class="bg-[#c991a5] hover:bg-[#b97f95] text-white font-bold px-7 py-4 rounded-xl shadow-xl shadow-[#c991a5]/20 transition flex items-center justify-center gap-3">
-
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M20.52 3.48A11.82 11.82 0 0012.05 0C5.52 0 .2 5.32.2 11.85c0 2.09.55 4.13 1.6 5.92L.1 24l6.38-1.67a11.84 11.84 0 005.57 1.42h.01c6.53 0 11.85-5.32 11.85-11.85a11.82 11.82 0 00-3.39-8.42zM12.06 21.7h-.01a9.82 9.82 0 01-5.01-1.37l-.36-.21-3.79.99 1.01-3.69-.23-.38a9.83 9.83 0 01-1.51-5.19c0-5.42 4.42-9.84 9.85-9.84a9.78 9.78 0 016.96 2.89 9.82 9.82 0 012.88 6.97c0 5.42-4.42 9.83-9.84 9.83z"/>
-                            </svg>
-
-                            Ver catálogo
-                        </a>
-
-                        <a href="#productos"
-                           class="bg-white border border-[#e5d7da] hover:border-[#c991a5] hover:text-[#c991a5] text-[#66595e] font-bold px-7 py-4 rounded-xl transition">
-
-                            Ver productos
-
-                        </a>
-
-                    </div>
-
-                    <div class="mt-10 flex flex-wrap justify-center lg:justify-start gap-6 text-sm text-[#817278]">
-
-                        <div class="flex items-center gap-2">
-                            <span class="text-[#c991a5]">✓</span>
-                            Diseños para todos los gustos
-                        </div>
-
-                        <div class="flex items-center gap-2">
-                            <span class="text-[#c991a5]">✓</span>
-                            Pedidos personalizados
-                        </div>
-
-                        <div class="flex items-center gap-2">
-                            <span class="text-[#c991a5]">✓</span>
-                            Envíos a domicilio
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- VISUAL -->
-                <div class="relative flex justify-center">
-
-                    <div class="absolute -top-8 -right-4 w-24 h-24 bg-[#ead2da] rounded-3xl rotate-12 opacity-70"></div>
-
-                    <div class="absolute -bottom-8 -left-4 w-28 h-28 bg-[#eadbc7] rounded-full opacity-70"></div>
-
-                    <div class="relative w-full max-w-lg">
-
-                        <div class="bg-white rounded-[2rem] p-7 shadow-2xl border border-[#eee2e4] float">
-
-                            <div class="bg-[#c991a5] rounded-3xl p-8 text-white min-h-[390px] flex flex-col justify-between">
-
-                                <div class="flex justify-between items-start">
-
-                                    <div>
-
-                                        <p class="text-[#f9e9ee] text-sm font-semibold">
-                                            LA VACA
-                                        </p>
-
-                                        <h2 class="font-display text-4xl font-bold mt-1">
-                                            en Pijama
-                                        </h2>
-
-                                    </div>
-
-                                    <div class="w-12 h-12 bg-white/15 rounded-2xl flex items-center justify-center text-2xl">
-                                        🐮
-                                    </div>
-
-                                </div>
-
-                                <div class="grid grid-cols-3 gap-4">
-
-                                    <div class="bg-white/15 rounded-2xl p-4 text-center">
-                                        <div class="text-3xl mb-2">🌙</div>
-                                        <p class="text-xs font-semibold">
-                                            Pijamas
-                                        </p>
-                                    </div>
-
-                                    <div class="bg-white/15 rounded-2xl p-4 text-center">
-                                        <div class="text-3xl mb-2">🧸</div>
-                                        <p class="text-xs font-semibold">
-                                            Accesorios
-                                        </p>
-                                    </div>
-
-                                    <div class="bg-white/15 rounded-2xl p-4 text-center">
-                                        <div class="text-3xl mb-2">💕</div>
-                                        <p class="text-xs font-semibold">
-                                            Parejas
-                                        </p>
-                                    </div>
-
-                                </div>
-
-                                <div>
-
-                                    <p class="text-[#f9e9ee] text-sm">
-                                        Tu momento de descanso
+                    <div class="relative">
+                        <div class="bg-[var(--pink-light)] rounded-[3rem] p-6 md:p-10">
+                            <div class="aspect-square rounded-[2.5rem] bg-white flex items-center justify-center overflow-hidden">
+                                <div class="text-center px-8">
+                                    <div class="text-8xl mb-5">🐄</div>
+                                    <h3 class="text-3xl font-bold mb-3">
+                                        La Vaca en Pijama
+                                    </h3>
+                                    <p class="text-[var(--gray)]">
+                                        Comodidad, estilo y dulces sueños.
                                     </p>
-
-                                    <p class="text-2xl font-bold">
-                                        empieza aquí.
-
-                                    </p>
-
                                 </div>
-
                             </div>
-
                         </div>
 
+                        <div class="absolute -bottom-5 -left-3 md:left-0 bg-white shadow-xl rounded-2xl px-5 py-4">
+                            <p class="text-sm font-bold">Tu descanso merece estilo</p>
+                            <p class="text-xs text-[var(--gray)]">Pijamas & accesorios</p>
+                        </div>
                     </div>
 
                 </div>
-
             </div>
+        </section>
 
-        </div>
-    </section>
 
+        <section id="categorias" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-5 lg:px-8">
 
-    <!-- CATEGORÍAS -->
-    <section id="categorias" class="py-24 bg-white">
-
-        <div class="max-w-7xl mx-auto px-5 lg:px-8">
-
-            <div class="text-center max-w-2xl mx-auto mb-14">
-
-                <span class="text-[#c991a5] font-bold text-sm uppercase tracking-widest">
-                    Colecciones
-                </span>
-
-                <h2 class="font-display text-4xl md:text-5xl font-bold text-[#40373a] mt-3">
-                    Encuentra tu estilo
-                </h2>
-
-                <p class="text-[#75676c] mt-5 text-lg">
-                    Opciones para descansar, regalar y disfrutar de momentos especiales.
-                </p>
-
-            </div>
-
-
-            <div class="grid md:grid-cols-3 gap-7">
-
-                <div class="card-hover bg-[#fcf5f7] border border-[#eadfe2] rounded-3xl p-8">
-
-                    <div class="w-14 h-14 bg-[#f0dce3] text-[#b4778d] rounded-2xl flex items-center justify-center text-2xl mb-6">
-                        🌙
-                    </div>
-
-                    <h3 class="text-xl font-bold text-[#40373a]">
-                        Pijamas
-                    </h3>
-
-                    <p class="text-[#75676c] mt-3 leading-relaxed">
-                        Pijamas cómodas y bonitas para disfrutar tus noches y descansar con estilo.
-                    </p>
-
-                    <a href="#productos"
-                       class="inline-block mt-6 text-[#b4778d] font-bold">
-                        Ver colección →
-                    </a>
-
-                </div>
-
-
-                <div class="card-hover bg-[#faf6f0] border border-[#eadfd4] rounded-3xl p-8">
-
-                    <div class="w-14 h-14 bg-[#eadbc7] text-[#9a7957] rounded-2xl flex items-center justify-center text-2xl mb-6">
-                        💕
-                    </div>
-
-                    <h3 class="text-xl font-bold text-[#40373a]">
-                        Parejas
-                    </h3>
-
-                    <p class="text-[#75676c] mt-3 leading-relaxed">
-                        Pijamas para compartir momentos especiales en pareja.
-                    </p>
-
-                    <a href="#productos"
-                       class="inline-block mt-6 text-[#b4778d] font-bold">
-                        Ver colección →
-                    </a>
-
-                </div>
-
-
-                <div class="card-hover bg-[#f8f3ee] border border-[#e6ddd4] rounded-3xl p-8">
-
-                    <div class="w-14 h-14 bg-[#e9ddd0] text-[#96765a] rounded-2xl flex items-center justify-center text-2xl mb-6">
-                        🎄
-                    </div>
-
-                    <h3 class="text-xl font-bold text-[#40373a]">
-                        Navideñas
-                    </h3>
-
-                    <p class="text-[#75676c] mt-3 leading-relaxed">
-                        Diseños especiales para vivir la temporada navideña con toda la familia.
-                    </p>
-
-                    <a href="#productos"
-                       class="inline-block mt-6 text-[#b4778d] font-bold">
-                        Ver colección →
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- PRODUCTOS -->
-    <section id="productos" class="py-24 bg-[#faf6f3]">
-
-        <div class="max-w-7xl mx-auto px-5 lg:px-8">
-
-            <div class="text-center max-w-2xl mx-auto mb-14">
-
-                <span class="text-[#c991a5] font-bold text-sm uppercase tracking-widest">
-                    Catálogo
-                </span>
-
-                <h2 class="font-display text-4xl md:text-5xl font-bold text-[#40373a] mt-3">
-                    Todo para tus noches
-                </h2>
-
-                <p class="text-[#75676c] mt-5 text-lg">
-                    Descubre nuestros productos y pregunta por tallas, colores y diseños disponibles.
-                </p>
-
-            </div>
-
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
-
-                <div class="card-hover bg-white rounded-3xl p-7 border border-[#eadfe2] text-center">
-
-                    <div class="text-5xl mb-5">
-                        👚
-                    </div>
-
-                    <h3 class="font-bold text-[#40373a]">
-                        Pijamas
-                    </h3>
-
-                    <p class="text-sm text-[#8b7c81] mt-2">
-                        Diferentes diseños y tallas
-                    </p>
-
-                </div>
-
-
-                <div class="card-hover bg-white rounded-3xl p-7 border border-[#eadfe2] text-center">
-
-                    <div class="text-5xl mb-5">
-                        💕
-                    </div>
-
-                    <h3 class="font-bold text-[#40373a]">
-                        Pijamas de pareja
-                    </h3>
-
-                    <p class="text-sm text-[#8b7c81] mt-2">
-                        Diseños para compartir
-                    </p>
-
-                </div>
-
-
-                <div class="card-hover bg-white rounded-3xl p-7 border border-[#eadfe2] text-center">
-
-                    <div class="text-5xl mb-5">
-                        🎄
-                    </div>
-
-                    <h3 class="font-bold text-[#40373a]">
-                        Pijamas navideñas
-                    </h3>
-
-                    <p class="text-sm text-[#8b7c81] mt-2">
-                        Para celebrar en familia
-                    </p>
-
-                </div>
-
-
-                <div class="card-hover bg-white rounded-3xl p-7 border border-[#eadfe2] text-center">
-
-                    <div class="text-5xl mb-5">
-                        🛁
-                    </div>
-
-                    <h3 class="font-bold text-[#40373a]">
-                        Batas
-                    </h3>
-
-                    <p class="text-sm text-[#8b7c81] mt-2">
-                        Comodidad para estar en casa
-                    </p>
-
-                </div>
-
-
-                <div class="card-hover bg-white rounded-3xl p-7 border border-[#eadfe2] text-center">
-
-                    <div class="text-5xl mb-5">
-                        🧖‍♀️
-                    </div>
-
-                    <h3 class="font-bold text-[#40373a]">
-                        Gorros de satén
-                    </h3>
-
-                    <p class="text-sm text-[#8b7c81] mt-2">
-                        Para complementar tu rutina
-                    </p>
-
-                </div>
-
-
-                <div class="card-hover bg-white rounded-3xl p-7 border border-[#eadfe2] text-center">
-
-                    <div class="text-5xl mb-5">
-                        🧦
-                    </div>
-
-                    <h3 class="font-bold text-[#40373a]">
-                        Medias
-                    </h3>
-
-                    <p class="text-sm text-[#8b7c81] mt-2">
-                        Opciones cálidas y cómodas
-                    </p>
-
-                </div>
-
-
-                <div class="card-hover bg-white rounded-3xl p-7 border border-[#eadfe2] text-center">
-
-                    <div class="text-5xl mb-5">
-                        🧺
-                    </div>
-
-                    <h3 class="font-bold text-[#40373a]">
-                        Toallas
-                    </h3>
-
-                    <p class="text-sm text-[#8b7c81] mt-2">
-                        Opciones para regalar
-                    </p>
-
-                </div>
-
-
-                <div class="card-hover bg-white rounded-3xl p-7 border border-[#eadfe2] text-center">
-
-                    <div class="text-5xl mb-5">
-                        🎁
-                    </div>
-
-                    <h3 class="font-bold text-[#40373a]">
-                        Accesorios
-                    </h3>
-
-                    <p class="text-sm text-[#8b7c81] mt-2">
-                        Pregunta por disponibilidad
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- NOSOTROS -->
-    <section id="nosotros" class="py-24 bg-white">
-
-        <div class="max-w-7xl mx-auto px-5 lg:px-8">
-
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-
-                <div>
-
-                    <span class="text-[#c991a5] font-bold text-sm uppercase tracking-widest">
-                        Sobre nosotros
-                    </span>
-
-                    <h2 class="font-display text-4xl md:text-5xl font-bold text-[#40373a] mt-3">
-                        La Vaca en Pijama
+                <div class="text-center mb-16">
+                    <h2 class="section-title text-4xl md:text-5xl font-bold">
+                        Encuentra tu estilo
                     </h2>
 
-                    <p class="text-[#75676c] text-lg leading-relaxed mt-6">
-                        Somos una tienda pensada para quienes aman sentirse cómodos,
-                        descansar y disfrutar de productos bonitos para estar en casa.
+                    <p class="mt-7 text-[var(--gray)] max-w-2xl mx-auto">
+                        Explora nuestras categorías y encuentra esa prenda perfecta para descansar, regalar o compartir.
                     </p>
-
-                    <p class="text-[#75676c] leading-relaxed mt-4">
-                        Nos encanta ofrecer pijamas, accesorios y detalles que hagan
-                        que tu momento de descanso sea todavía más especial.
-                    </p>
-
-                    <div class="grid grid-cols-2 gap-5 mt-8">
-
-                        <div class="bg-[#f9edf1] rounded-2xl p-5">
-
-                            <p class="text-3xl font-extrabold text-[#c991a5]">
-                                01
-                            </p>
-
-                            <p class="font-bold text-[#40373a] mt-2">
-                                Diseños bonitos
-                            </p>
-
-                        </div>
-
-                        <div class="bg-[#f8f0e7] rounded-2xl p-5">
-
-                            <p class="text-3xl font-extrabold text-[#9a7957]">
-                                02
-                            </p>
-
-                            <p class="font-bold text-[#40373a] mt-2">
-                                Comodidad
-                            </p>
-
-                        </div>
-
-                    </div>
-
                 </div>
 
+                <div class="grid md:grid-cols-3 gap-7">
 
-                <div class="bg-[#40373a] rounded-[2rem] p-8 md:p-12 text-white">
+                    <a href="#productos" class="category-card bg-[var(--pink-light)] rounded-3xl p-8 text-center">
+                        <div class="text-6xl mb-5">🌙</div>
+                        <h3 class="text-2xl font-bold mb-3">Pijamas</h3>
+                        <p class="text-[var(--gray)]">
+                            Diseños cómodos para disfrutar tus noches.
+                        </p>
+                    </a>
 
-                    <div class="text-6xl mb-8">
-                        🐮
-                    </div>
+                    <a href="#productos" class="category-card bg-[var(--beige)] rounded-3xl p-8 text-center">
+                        <div class="text-6xl mb-5">💗</div>
+                        <h3 class="text-2xl font-bold mb-3">Pijamas de pareja</h3>
+                        <p class="text-[var(--gray)]">
+                            Combina tu estilo con esa persona especial.
+                        </p>
+                    </a>
 
-                    <h3 class="font-display text-3xl font-bold">
-                        Tu momento de descanso
-                        merece sentirse especial.
-                    </h3>
-
-                    <p class="text-[#d8ced0] mt-5 leading-relaxed">
-                        Elige tu pijama favorita, encuentra ese accesorio que
-                        estabas buscando y disfruta de la comodidad de estar en casa.
-                    </p>
-
-                    <a href="https://wa.me/5732233506152?text=Hola%20La%20Vaca%20en%20Pijama,%20quiero%20consultar%20por%20sus%20productos"
-                       target="_blank"
-                       class="inline-flex mt-8 bg-white text-[#40373a] px-6 py-3 rounded-xl font-bold hover:bg-[#f9edf1] transition">
-
-                        Consultar productos
-
+                    <a href="#productos" class="category-card bg-[#f5e9df] rounded-3xl p-8 text-center">
+                        <div class="text-6xl mb-5">🎄</div>
+                        <h3 class="text-2xl font-bold mb-3">Navideñas</h3>
+                        <p class="text-[var(--gray)]">
+                            Celebra la Navidad con comodidad y estilo.
+                        </p>
                     </a>
 
                 </div>
-
             </div>
-
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- CONTACTO -->
-    <section id="contacto" class="py-24 bg-[#c991a5] text-white">
+        <section id="productos" class="py-24 bg-[var(--cream)]">
+            <div class="max-w-7xl mx-auto px-5 lg:px-8">
 
-        <div class="max-w-5xl mx-auto px-5 lg:px-8 text-center">
+                <div class="text-center mb-16">
+                    <h2 class="section-title text-4xl md:text-5xl font-bold">
+                        Nuestros productos
+                    </h2>
 
-            <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-2 rounded-full text-sm font-semibold">
-                Estamos para ayudarte
+                    <p class="mt-7 text-[var(--gray)]">
+                        Opciones para dormir, relajarte, regalar y disfrutar.
+                    </p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-7">
+
+                    <article class="product-card bg-white rounded-3xl overflow-hidden">
+                        <div class="h-64 bg-[var(--pink-light)] flex items-center justify-center">
+                            <span class="text-7xl">🌙</span>
+                        </div>
+
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-[var(--pink-dark)] uppercase">
+                                Pijamas
+                            </span>
+
+                            <h3 class="text-2xl font-bold mt-2 mb-3">
+                                Pijamas
+                            </h3>
+
+                            <p class="text-sm text-[var(--gray)] mb-5">
+                                Diseños cómodos y perfectos para descansar.
+                            </p>
+
+                            <a href="https://wa.me/573157212081?text=Hola%20quiero%20informaci%C3%B3n%20sobre%20las%20pijamas."
+                               target="_blank"
+                               class="btn-main block text-center text-white py-3 rounded-full font-bold">
+                                Consultar
+                            </a>
+                        </div>
+                    </article>
+
+
+                    <article class="product-card bg-white rounded-3xl overflow-hidden">
+                        <div class="h-64 bg-[var(--beige)] flex items-center justify-center">
+                            <span class="text-7xl">💗</span>
+                        </div>
+
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-[var(--pink-dark)] uppercase">
+                                Parejas
+                            </span>
+
+                            <h3 class="text-2xl font-bold mt-2 mb-3">
+                                Pijamas de pareja
+                            </h3>
+
+                            <p class="text-sm text-[var(--gray)] mb-5">
+                                Diseños para compartir momentos especiales.
+                            </p>
+
+                            <a href="https://wa.me/573157212081?text=Hola%20quiero%20informaci%C3%B3n%20sobre%20las%20pijamas%20de%20pareja."
+                               target="_blank"
+                               class="btn-main block text-center text-white py-3 rounded-full font-bold">
+                                Consultar
+                            </a>
+                        </div>
+                    </article>
+
+
+                    <article class="product-card bg-white rounded-3xl overflow-hidden">
+                        <div class="h-64 bg-[#f5e9df] flex items-center justify-center">
+                            <span class="text-7xl">🎄</span>
+                        </div>
+
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-[var(--pink-dark)] uppercase">
+                                Temporada
+                            </span>
+
+                            <h3 class="text-2xl font-bold mt-2 mb-3">
+                                Pijamas navideñas
+                            </h3>
+
+                            <p class="text-sm text-[var(--gray)] mb-5">
+                                Celebra las fiestas con pijamas especiales.
+                            </p>
+
+                            <a href="https://wa.me/573157212081?text=Hola%20quiero%20informaci%C3%B3n%20sobre%20las%20pijamas%20navide%C3%B1as."
+                               target="_blank"
+                               class="btn-main block text-center text-white py-3 rounded-full font-bold">
+                                Consultar
+                            </a>
+                        </div>
+                    </article>
+
+
+                    <article class="product-card bg-white rounded-3xl overflow-hidden">
+                        <div class="h-64 bg-[#eee6e1] flex items-center justify-center">
+                            <span class="text-7xl">🧸</span>
+                        </div>
+
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-[var(--pink-dark)] uppercase">
+                                Accesorios
+                            </span>
+
+                            <h3 class="text-2xl font-bold mt-2 mb-3">
+                                Batas
+                            </h3>
+
+                            <p class="text-sm text-[var(--gray)] mb-5">
+                                Complementa tus momentos de descanso.
+                            </p>
+
+                            <a href="https://wa.me/573157212081?text=Hola%20quiero%20informaci%C3%B3n%20sobre%20las%20batas."
+                               target="_blank"
+                               class="btn-main block text-center text-white py-3 rounded-full font-bold">
+                                Consultar
+                            </a>
+                        </div>
+                    </article>
+
+
+                    <article class="product-card bg-white rounded-3xl overflow-hidden">
+                        <div class="h-64 bg-[#e9e1dc] flex items-center justify-center">
+                            <span class="text-7xl">🎀</span>
+                        </div>
+
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-[var(--pink-dark)] uppercase">
+                                Accesorios
+                            </span>
+
+                            <h3 class="text-2xl font-bold mt-2 mb-3">
+                                Gorros de satén
+                            </h3>
+
+                            <p class="text-sm text-[var(--gray)] mb-5">
+                                Accesorios para acompañar tu rutina de descanso.
+                            </p>
+
+                            <a href="https://wa.me/573157212081?text=Hola%20quiero%20informaci%C3%B3n%20sobre%20los%20gorros%20de%20sat%C3%A9n."
+                               target="_blank"
+                               class="btn-main block text-center text-white py-3 rounded-full font-bold">
+                                Consultar
+                            </a>
+                        </div>
+                    </article>
+
+
+                    <article class="product-card bg-white rounded-3xl overflow-hidden">
+                        <div class="h-64 bg-[var(--pink-light)] flex items-center justify-center">
+                            <span class="text-7xl">🧦</span>
+                        </div>
+
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-[var(--pink-dark)] uppercase">
+                                Accesorios
+                            </span>
+
+                            <h3 class="text-2xl font-bold mt-2 mb-3">
+                                Medias
+                            </h3>
+
+                            <p class="text-sm text-[var(--gray)] mb-5">
+                                Comodidad para mantener tus pies calentitos.
+                            </p>
+
+                            <a href="https://wa.me/573157212081?text=Hola%20quiero%20informaci%C3%B3n%20sobre%20las%20medias."
+                               target="_blank"
+                               class="btn-main block text-center text-white py-3 rounded-full font-bold">
+                                Consultar
+                            </a>
+                        </div>
+                    </article>
+
+
+                    <article class="product-card bg-white rounded-3xl overflow-hidden">
+                        <div class="h-64 bg-[var(--beige)] flex items-center justify-center">
+                            <span class="text-7xl">🛏️</span>
+                        </div>
+
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-[var(--pink-dark)] uppercase">
+                                Hogar
+                            </span>
+
+                            <h3 class="text-2xl font-bold mt-2 mb-3">
+                                Toallas
+                            </h3>
+
+                            <p class="text-sm text-[var(--gray)] mb-5">
+                                Opciones para complementar tu hogar.
+                            </p>
+
+                            <a href="https://wa.me/573157212081?text=Hola%20quiero%20informaci%C3%B3n%20sobre%20las%20toallas."
+                               target="_blank"
+                               class="btn-main block text-center text-white py-3 rounded-full font-bold">
+                                Consultar
+                            </a>
+                        </div>
+                    </article>
+
+
+                    <article class="product-card bg-white rounded-3xl overflow-hidden">
+                        <div class="h-64 bg-[#f2e8e2] flex items-center justify-center">
+                            <span class="text-7xl">✨</span>
+                        </div>
+
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-[var(--pink-dark)] uppercase">
+                                Especial
+                            </span>
+
+                            <h3 class="text-2xl font-bold mt-2 mb-3">
+                                Accesorios
+                            </h3>
+
+                            <p class="text-sm text-[var(--gray)] mb-5">
+                                Detalles ideales para complementar tus looks de descanso.
+                            </p>
+
+                            <a href="https://wa.me/573157212081?text=Hola%20quiero%20conocer%20los%20accesorios%20disponibles."
+                               target="_blank"
+                               class="btn-main block text-center text-white py-3 rounded-full font-bold">
+                                Consultar
+                            </a>
+                        </div>
+                    </article>
+
+                </div>
             </div>
+        </section>
 
-            <h2 class="font-display text-4xl md:text-6xl font-bold mt-6">
-                ¿Qué pijama estás buscando?
-            </h2>
 
-            <p class="text-[#f9e8ed] text-lg max-w-2xl mx-auto mt-5 leading-relaxed">
-                Escríbenos por WhatsApp para consultar tallas, colores,
-                diseños disponibles o realizar tu pedido.
-            </p>
+        <section id="nosotros" class="py-24 bg-white">
+            <div class="max-w-6xl mx-auto px-5 lg:px-8">
 
-            <div class="mt-9">
+                <div class="grid md:grid-cols-2 gap-14 items-center">
 
-                <a href="https://wa.me/5732233506152?text=Hola%20La%20Vaca%20en%20Pijama,%20quiero%20hacer%20un%20pedido"
+                    <div>
+                        <span class="text-sm font-bold text-[var(--pink-dark)] uppercase tracking-widest">
+                            Sobre nosotros
+                        </span>
+
+                        <h2 class="text-4xl md:text-5xl font-bold mt-4 mb-6">
+                            Más que una pijama,
+                            <span class="text-[var(--pink-dark)]">es tu momento.</span>
+                        </h2>
+
+                        <p class="text-[var(--gray)] leading-relaxed mb-5">
+                            En La Vaca en Pijama creemos que descansar también puede ser una forma de consentirte.
+                        </p>
+
+                        <p class="text-[var(--gray)] leading-relaxed mb-7">
+                            Por eso buscamos ofrecer prendas y accesorios cómodos, bonitos y pensados para acompañarte en esos momentos en los que simplemente quieres sentirte bien.
+                        </p>
+
+                        <a href="https://wa.me/573157212081?text=Hola%20La%20Vaca%20en%20Pijama%2C%20quiero%20conocer%20m%C3%A1s%20sobre%20la%20tienda."
+                           target="_blank"
+                           class="btn-main inline-block text-white px-7 py-4 rounded-full font-bold">
+                            Conocer más
+                        </a>
+                    </div>
+
+                    <div class="bg-[var(--pink-light)] rounded-[3rem] p-10 text-center">
+                        <div class="text-8xl mb-5">🐄💗</div>
+                        <h3 class="text-3xl font-bold mb-4">
+                            Sueña bonito
+                        </h3>
+                        <p class="text-[var(--gray)] leading-relaxed">
+                            Porque cada noche merece comodidad, tranquilidad y un poquito de estilo.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="py-24 bg-[var(--pink-light)]">
+            <div class="max-w-5xl mx-auto px-5 text-center">
+
+                <div class="text-6xl mb-6">💗</div>
+
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    ¿Ya encontraste tu pijama favorita?
+                </h2>
+
+                <p class="text-[var(--gray)] text-lg max-w-2xl mx-auto mb-9">
+                    Escríbenos por WhatsApp y pregunta por disponibilidad, tallas, colores y diseños.
+                </p>
+
+                <a href="https://wa.me/573157212081?text=Hola%20La%20Vaca%20en%20Pijama%2C%20quiero%20ver%20los%20productos%20disponibles."
                    target="_blank"
-                   class="inline-flex items-center gap-3 bg-white text-[#c991a5] px-8 py-4 rounded-xl font-extrabold text-lg hover:bg-[#fff7f9] transition shadow-2xl">
-
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M20.52 3.48A11.82 11.82 0 0012.05 0C5.52 0 .2 5.32.2 11.85c0 2.09.55 4.13 1.6 5.92L.1 24l6.38-1.67a11.84 11.84 0 005.57 1.42h.01c6.53 0 11.85-5.32 11.85-11.85a11.82 11.82 0 00-3.39-8.42z"/>
-                    </svg>
-
-                    Pedir por WhatsApp
-
+                   class="inline-block bg-[var(--brown)] text-white px-8 py-4 rounded-full font-bold hover:opacity-90 transition">
+                    Hablar por WhatsApp
                 </a>
 
             </div>
+        </section>
 
-            <p class="text-[#f4dfe5] text-sm mt-6">
-                Escríbenos para conocer disponibilidad
-            </p>
-
-        </div>
-
-    </section>
+    </main>
 
 
-    <!-- FOOTER -->
-    <footer class="bg-[#30292c] text-[#b9adb1]">
+    <footer class="bg-[var(--brown)] text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-5 lg:px-8">
 
-        <div class="max-w-7xl mx-auto px-5 lg:px-8 py-12">
-
-            <div class="grid md:grid-cols-3 gap-10">
+            <div class="grid md:grid-cols-3 gap-12 pb-12">
 
                 <div>
-
-                    <div class="flex items-center gap-3">
-
-                        <div class="w-10 h-10 bg-[#c991a5] text-white rounded-xl flex items-center justify-center text-xl">
-                            🐮
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center text-2xl">
+                            🐄
                         </div>
 
-                        <p class="text-xl font-bold text-white">
-                            La Vaca en Pijama
+                        <div>
+                            <h3 class="text-xl font-bold">
+                                La Vaca en Pijama
+                            </h3>
+                            <p class="text-white/60 text-sm">
+                                Sueña bonito
+                            </p>
+                        </div>
+                    </div>
+
+                    <p class="text-white/60 leading-relaxed">
+                        Pijamas, ropa y accesorios para disfrutar tus momentos de descanso.
+                    </p>
+                </div>
+
+
+                <div>
+                    <h3 class="text-xl font-bold mb-5">
+                        Navegación
+                    </h3>
+
+                    <div class="flex flex-col gap-3 text-white/60">
+                        <a href="#inicio" class="hover:text-white transition">Inicio</a>
+                        <a href="#categorias" class="hover:text-white transition">Categorías</a>
+                        <a href="#productos" class="hover:text-white transition">Productos</a>
+                        <a href="#nosotros" class="hover:text-white transition">Nosotros</a>
+                    </div>
+                </div>
+
+
+                <div>
+                    <h3 class="text-xl font-bold mb-5">
+                        Contáctanos
+                    </h3>
+
+                    <div class="space-y-4 text-white/60">
+
+                        <a href="https://wa.me/573157212081"
+                           target="_blank"
+                           class="flex items-center gap-3 hover:text-white transition">
+                            <span>💬</span>
+                            <span>315 721 2081</span>
+                        </a>
+
+                        <p class="flex items-center gap-3">
+                            <span>📦</span>
+                            <span>Envíos y entregas</span>
+                        </p>
+
+                        <p class="flex items-center gap-3">
+                            <span>💗</span>
+                            <span>Atención personalizada</span>
                         </p>
 
                     </div>
-
-                    <p class="mt-5 text-sm leading-relaxed max-w-sm">
-                        Pijamas, accesorios y detalles para disfrutar
-                        tus momentos de descanso.
-                    </p>
-
-                </div>
-
-
-                <div>
-
-                    <h3 class="text-white font-bold mb-4">
-                        Enlaces
-                    </h3>
-
-                    <div class="flex flex-col gap-3 text-sm">
-
-                        <a href="#inicio" class="hover:text-white transition">
-                            Inicio
-                        </a>
-
-                        <a href="#categorias" class="hover:text-white transition">
-                            Categorías
-                        </a>
-
-                        <a href="#productos" class="hover:text-white transition">
-                            Productos
-                        </a>
-
-                        <a href="#contacto" class="hover:text-white transition">
-                            Contacto
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <div>
-
-                    <h3 class="text-white font-bold mb-4">
-                        Pedidos
-                    </h3>
-
-                    <p class="text-sm">
-                        WhatsApp
-                    </p>
-
-                    <p class="text-white font-bold mt-1">
-                        Consulta por disponibilidad
-                    </p>
-
-                    <a href="https://wa.me/5732233506152"
-                       target="_blank"
-                       class="inline-block mt-4 text-[#dbaabd] hover:text-[#efcbd7] font-semibold text-sm">
-
-                        Escribir ahora →
-
-                    </a>
-
                 </div>
 
             </div>
 
-
-            <div class="border-t border-[#493e42] mt-10 pt-6 text-center text-sm">
-
+            <div class="border-t border-white/10 pt-7 flex flex-col md:flex-row justify-between gap-4 text-sm text-white/40">
                 <p>
                     © 2026 La Vaca en Pijama. Todos los derechos reservados.
                 </p>
 
+                <p>
+                    Diseñado con amor para soñar bonito.
+                </p>
             </div>
 
         </div>
-
     </footer>
 
 
-    <!-- BOTÓN FLOTANTE WHATSAPP -->
-    <a href="https://wa.me/5732233506152?text=Hola%20La%20Vaca%20en%20Pijama"
+    <a href="https://wa.me/573157212081?text=Hola%20La%20Vaca%20en%20Pijama%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20productos."
        target="_blank"
-       class="fixed bottom-5 right-5 z-40 w-14 h-14 bg-[#25D366] hover:bg-[#1ebe5d] text-white rounded-full flex items-center justify-center shadow-2xl transition hover:scale-110"
+       class="floating-whatsapp"
        aria-label="Contactar por WhatsApp">
-
-        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M20.52 3.48A11.82 11.82 0 0012.05 0C5.52 0 .2 5.32.2 11.85c0 2.09.55 4.13 1.6 5.92L.1 24l6.38-1.67a11.84 11.84 0 005.57 1.42h.01c6.53 0 11.85-5.32 11.85-11.85a11.82 11.82 0 00-3.39-8.42z"/>
-        </svg>
-
+        ☎
     </a>
-
-
-    <script>
-
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-
-        });
-
-    </script>
 
 </body>
 </html>
-
