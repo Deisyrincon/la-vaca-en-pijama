@@ -1,10 +1,11 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Papelería Malu | Todo para estudiar, crear y trabajar</title>
+    <title>La Vaca en Pijama | Pijamas, ropa y accesorios para dormir</title>
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
@@ -26,9 +27,9 @@
         }
 
         .hero-pattern {
-            background-image:
-                radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.08) 0, transparent 25%),
-                radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.08) 0, transparent 25%);
+            background:
+                radial-gradient(circle at 10% 20%, rgba(214, 178, 191, 0.18) 0, transparent 28%),
+                radial-gradient(circle at 90% 80%, rgba(226, 198, 173, 0.20) 0, transparent 28%);
         }
 
         .card-hover {
@@ -37,7 +38,7 @@
 
         .card-hover:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.10);
+            box-shadow: 0 20px 40px rgba(72, 55, 63, 0.12);
         }
 
         .float {
@@ -76,84 +77,97 @@
     </style>
 </head>
 
-<body class="bg-stone-50 text-slate-800 antialiased">
+<body class="bg-[#fcf8f5] text-[#51464a] antialiased">
 
     <!-- NAVBAR -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-slate-200/70">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-[#eadfe0]">
 
         <div class="max-w-7xl mx-auto px-5 lg:px-8 h-20 flex items-center justify-between">
 
             <a href="#inicio" class="flex items-center gap-3">
-                <div class="w-11 h-11 rounded-2xl bg-blue-600 text-white flex items-center justify-center shadow-lg shadow-blue-600/20">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                            d="M4 19.5A2.5 2.5 0 016.5 17H20"/>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                            d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
-                    </svg>
+
+                <div class="w-11 h-11 rounded-2xl bg-[#c991a5] text-white flex items-center justify-center shadow-lg shadow-[#c991a5]/20">
+                    <span class="text-2xl">🐮</span>
                 </div>
 
                 <div>
-                    <p class="text-xl font-extrabold text-slate-900 leading-none">
-                        Papelería <span class="text-blue-600">Malu</span>
+                    <p class="text-xl font-extrabold text-[#40373a] leading-none">
+                        La Vaca <span class="text-[#c991a5]">en Pijama</span>
                     </p>
-                    <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold mt-1">
-                        Todo en un solo lugar
+
+                    <p class="text-[10px] uppercase tracking-[0.2em] text-[#a8959b] font-bold mt-1">
+                        Sueña bonito
                     </p>
                 </div>
+
             </a>
 
-            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
-                <a href="#inicio" class="hover:text-blue-600 transition">Inicio</a>
-                <a href="#servicios" class="hover:text-blue-600 transition">Servicios</a>
-                <a href="#productos" class="hover:text-blue-600 transition">Productos</a>
-                <a href="#nosotros" class="hover:text-blue-600 transition">Nosotros</a>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-[#66595e]">
+
+                <a href="#inicio" class="hover:text-[#c991a5] transition">
+                    Inicio
+                </a>
+
+                <a href="#categorias" class="hover:text-[#c991a5] transition">
+                    Categorías
+                </a>
+
+                <a href="#productos" class="hover:text-[#c991a5] transition">
+                    Productos
+                </a>
+
+                <a href="#nosotros" class="hover:text-[#c991a5] transition">
+                    Nosotros
+                </a>
 
                 <a href="#contacto"
-                   class="bg-blue-600 text-white px-5 py-3 rounded-xl hover:bg-blue-700 transition shadow-lg shadow-blue-600/20">
-                    Hacer pedido
+                   class="bg-[#c991a5] text-white px-5 py-3 rounded-xl hover:bg-[#b97f95] transition shadow-lg shadow-[#c991a5]/20">
+                    Comprar
                 </a>
+
             </nav>
 
             <button id="menu-btn"
-                    class="md:hidden w-11 h-11 rounded-xl bg-slate-100 flex items-center justify-center text-slate-700">
+                    class="md:hidden w-11 h-11 rounded-xl bg-[#f4e9ec] flex items-center justify-center text-[#66595e]">
+
                 <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                           d="M4 6h16M4 12h16M4 18h16"/>
                 </svg>
+
             </button>
 
         </div>
 
         <!-- MENU MOBILE -->
         <div id="mobile-menu"
-             class="hidden md:hidden bg-white border-t border-slate-200 px-5 py-5">
+             class="hidden md:hidden bg-white border-t border-[#eadfe0] px-5 py-5">
 
             <div class="flex flex-col gap-2">
 
                 <a href="#inicio"
-                   class="px-4 py-3 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition">
+                   class="px-4 py-3 rounded-xl hover:bg-[#f9eff2] hover:text-[#c991a5] transition">
                     Inicio
                 </a>
 
-                <a href="#servicios"
-                   class="px-4 py-3 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition">
-                    Servicios
+                <a href="#categorias"
+                   class="px-4 py-3 rounded-xl hover:bg-[#f9eff2] hover:text-[#c991a5] transition">
+                    Categorías
                 </a>
 
                 <a href="#productos"
-                   class="px-4 py-3 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition">
+                   class="px-4 py-3 rounded-xl hover:bg-[#f9eff2] hover:text-[#c991a5] transition">
                     Productos
                 </a>
 
                 <a href="#nosotros"
-                   class="px-4 py-3 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition">
+                   class="px-4 py-3 rounded-xl hover:bg-[#f9eff2] hover:text-[#c991a5] transition">
                     Nosotros
                 </a>
 
                 <a href="#contacto"
-                   class="mt-2 text-center bg-blue-600 text-white px-4 py-3 rounded-xl font-bold">
-                    Hacer pedido
+                   class="mt-2 text-center bg-[#c991a5] text-white px-4 py-3 rounded-xl font-bold">
+                    Comprar
                 </a>
 
             </div>
@@ -172,58 +186,63 @@
                 <!-- TEXTO -->
                 <div class="text-center lg:text-left fade-up">
 
-                    <div class="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-bold mb-6">
-                        <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
-                        Todo para estudiar, crear y trabajar
+                    <div class="inline-flex items-center gap-2 bg-[#f7e9ed] border border-[#ead5dc] text-[#b4778d] px-4 py-2 rounded-full text-sm font-bold mb-6">
+                        <span class="w-2 h-2 bg-[#c991a5] rounded-full"></span>
+                        Pijamas para sentirte cómoda
                     </div>
 
-                    <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 leading-[1.05]">
-                        Tu mundo de
-                        <span class="text-blue-600">papelería</span>
-                        comienza aquí.
+                    <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-[#40373a] leading-[1.05]">
+
+                        Duerme bonito,
+                        <span class="text-[#c991a5]">siéntete increíble.</span>
+
                     </h1>
 
-                    <p class="mt-7 text-lg text-slate-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                        En <strong class="text-slate-900">Papelería Malu</strong>
-                        encuentras útiles escolares, artículos de oficina,
-                        materiales de arte, impresiones y mucho más.
+                    <p class="mt-7 text-lg text-[#75676c] leading-relaxed max-w-xl mx-auto lg:mx-0">
+
+                        En <strong class="text-[#40373a]">La Vaca en Pijama</strong>
+                        encuentras pijamas, batas y accesorios para dormir
+                        cómodamente y darle un toque especial a tus noches.
+
                     </p>
 
                     <div class="mt-9 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
 
-                        <a href="https://wa.me/573227010175?text=Hola%20Papeler%C3%ADa%20Malu,%20quiero%20hacer%20un%20pedido"
+                        <a href="https://wa.me/5732233506152?text=Hola%20La%20Vaca%20en%20Pijama,%20quiero%20ver%20el%20cat%C3%A1logo"
                            target="_blank"
-                           class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-7 py-4 rounded-xl shadow-xl shadow-blue-600/20 transition flex items-center justify-center gap-3">
+                           class="bg-[#c991a5] hover:bg-[#b97f95] text-white font-bold px-7 py-4 rounded-xl shadow-xl shadow-[#c991a5]/20 transition flex items-center justify-center gap-3">
 
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M20.52 3.48A11.82 11.82 0 0012.05 0C5.52 0 .2 5.32.2 11.85c0 2.09.55 4.13 1.6 5.92L.1 24l6.38-1.67a11.84 11.84 0 005.57 1.42h.01c6.53 0 11.85-5.32 11.85-11.85a11.82 11.82 0 00-3.39-8.42zM12.06 21.7h-.01a9.82 9.82 0 01-5.01-1.37l-.36-.21-3.79.99 1.01-3.69-.23-.38a9.83 9.83 0 01-1.51-5.19c0-5.42 4.42-9.84 9.85-9.84a9.78 9.78 0 016.96 2.89 9.82 9.82 0 012.88 6.97c0 5.42-4.42 9.83-9.84 9.83z"/>
                             </svg>
 
-                            Pedir por WhatsApp
+                            Ver catálogo
                         </a>
 
                         <a href="#productos"
-                           class="bg-white border border-slate-200 hover:border-blue-300 hover:text-blue-600 text-slate-700 font-bold px-7 py-4 rounded-xl transition">
+                           class="bg-white border border-[#e5d7da] hover:border-[#c991a5] hover:text-[#c991a5] text-[#66595e] font-bold px-7 py-4 rounded-xl transition">
+
                             Ver productos
+
                         </a>
 
                     </div>
 
-                    <div class="mt-10 flex flex-wrap justify-center lg:justify-start gap-6 text-sm text-slate-500">
+                    <div class="mt-10 flex flex-wrap justify-center lg:justify-start gap-6 text-sm text-[#817278]">
 
                         <div class="flex items-center gap-2">
-                            <span class="text-blue-600">✓</span>
-                            Atención personalizada
+                            <span class="text-[#c991a5]">✓</span>
+                            Diseños para todos los gustos
                         </div>
 
                         <div class="flex items-center gap-2">
-                            <span class="text-blue-600">✓</span>
-                            Productos variados
+                            <span class="text-[#c991a5]">✓</span>
+                            Pedidos personalizados
                         </div>
 
                         <div class="flex items-center gap-2">
-                            <span class="text-blue-600">✓</span>
-                            Pedidos por WhatsApp
+                            <span class="text-[#c991a5]">✓</span>
+                            Envíos a domicilio
                         </div>
 
                     </div>
@@ -234,33 +253,32 @@
                 <!-- VISUAL -->
                 <div class="relative flex justify-center">
 
-                    <div class="absolute -top-8 -right-4 w-24 h-24 bg-yellow-200 rounded-3xl rotate-12 opacity-70"></div>
+                    <div class="absolute -top-8 -right-4 w-24 h-24 bg-[#ead2da] rounded-3xl rotate-12 opacity-70"></div>
 
-                    <div class="absolute -bottom-8 -left-4 w-28 h-28 bg-blue-200 rounded-full opacity-60"></div>
+                    <div class="absolute -bottom-8 -left-4 w-28 h-28 bg-[#eadbc7] rounded-full opacity-70"></div>
 
                     <div class="relative w-full max-w-lg">
 
-                        <div class="bg-white rounded-[2rem] p-7 shadow-2xl border border-slate-100 float">
+                        <div class="bg-white rounded-[2rem] p-7 shadow-2xl border border-[#eee2e4] float">
 
-                            <div class="bg-blue-600 rounded-3xl p-8 text-white min-h-[390px] flex flex-col justify-between">
+                            <div class="bg-[#c991a5] rounded-3xl p-8 text-white min-h-[390px] flex flex-col justify-between">
 
                                 <div class="flex justify-between items-start">
 
                                     <div>
-                                        <p class="text-blue-100 text-sm font-semibold">
-                                            PAPELERÍA
+
+                                        <p class="text-[#f9e9ee] text-sm font-semibold">
+                                            LA VACA
                                         </p>
 
                                         <h2 class="font-display text-4xl font-bold mt-1">
-                                            Malu
+                                            en Pijama
                                         </h2>
+
                                     </div>
 
-                                    <div class="w-12 h-12 bg-white/15 rounded-2xl flex items-center justify-center">
-                                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
-                                                d="M12 6.5V20M7 4h10a2 2 0 012 2v14H5V6a2 2 0 012-2z"/>
-                                        </svg>
+                                    <div class="w-12 h-12 bg-white/15 rounded-2xl flex items-center justify-center text-2xl">
+                                        🐮
                                     </div>
 
                                 </div>
@@ -268,30 +286,39 @@
                                 <div class="grid grid-cols-3 gap-4">
 
                                     <div class="bg-white/15 rounded-2xl p-4 text-center">
-                                        <div class="text-3xl mb-2">📚</div>
-                                        <p class="text-xs font-semibold">Escolar</p>
+                                        <div class="text-3xl mb-2">🌙</div>
+                                        <p class="text-xs font-semibold">
+                                            Pijamas
+                                        </p>
                                     </div>
 
                                     <div class="bg-white/15 rounded-2xl p-4 text-center">
-                                        <div class="text-3xl mb-2">✏️</div>
-                                        <p class="text-xs font-semibold">Oficina</p>
+                                        <div class="text-3xl mb-2">🧸</div>
+                                        <p class="text-xs font-semibold">
+                                            Accesorios
+                                        </p>
                                     </div>
 
                                     <div class="bg-white/15 rounded-2xl p-4 text-center">
-                                        <div class="text-3xl mb-2">🎨</div>
-                                        <p class="text-xs font-semibold">Arte</p>
+                                        <div class="text-3xl mb-2">💕</div>
+                                        <p class="text-xs font-semibold">
+                                            Parejas
+                                        </p>
                                     </div>
 
                                 </div>
 
                                 <div>
-                                    <p class="text-blue-100 text-sm">
-                                        Todo lo que necesitas
+
+                                    <p class="text-[#f9e9ee] text-sm">
+                                        Tu momento de descanso
                                     </p>
 
                                     <p class="text-2xl font-bold">
-                                        en un solo lugar.
+                                        empieza aquí.
+
                                     </p>
+
                                 </div>
 
                             </div>
@@ -299,31 +326,32 @@
                         </div>
 
                     </div>
+
                 </div>
 
             </div>
+
         </div>
     </section>
 
 
-    <!-- SERVICIOS -->
-    <section id="servicios" class="py-24 bg-white">
+    <!-- CATEGORÍAS -->
+    <section id="categorias" class="py-24 bg-white">
 
         <div class="max-w-7xl mx-auto px-5 lg:px-8">
 
             <div class="text-center max-w-2xl mx-auto mb-14">
 
-                <span class="text-blue-600 font-bold text-sm uppercase tracking-widest">
-                    Lo que hacemos
+                <span class="text-[#c991a5] font-bold text-sm uppercase tracking-widest">
+                    Colecciones
                 </span>
 
-                <h2 class="font-display text-4xl md:text-5xl font-bold text-slate-900 mt-3">
-                    Servicios para facilitarte el día
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-[#40373a] mt-3">
+                    Encuentra tu estilo
                 </h2>
 
-                <p class="text-slate-600 mt-5 text-lg">
-                    Soluciones rápidas para tus trabajos, estudios,
-                    proyectos y necesidades de oficina.
+                <p class="text-[#75676c] mt-5 text-lg">
+                    Opciones para descansar, regalar y disfrutar de momentos especiales.
                 </p>
 
             </div>
@@ -331,70 +359,67 @@
 
             <div class="grid md:grid-cols-3 gap-7">
 
-                <div class="card-hover bg-slate-50 border border-slate-200 rounded-3xl p-8">
+                <div class="card-hover bg-[#fcf5f7] border border-[#eadfe2] rounded-3xl p-8">
 
-                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
-                        📄
+                    <div class="w-14 h-14 bg-[#f0dce3] text-[#b4778d] rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        🌙
                     </div>
 
-                    <h3 class="text-xl font-bold text-slate-900">
-                        Copias e impresiones
+                    <h3 class="text-xl font-bold text-[#40373a]">
+                        Pijamas
                     </h3>
 
-                    <p class="text-slate-600 mt-3 leading-relaxed">
-                        Impresiones a color y blanco y negro,
-                        copias y escaneo de documentos.
+                    <p class="text-[#75676c] mt-3 leading-relaxed">
+                        Pijamas cómodas y bonitas para disfrutar tus noches y descansar con estilo.
                     </p>
 
-                    <a href="#contacto"
-                       class="inline-block mt-6 text-blue-600 font-bold">
-                        Solicitar servicio →
+                    <a href="#productos"
+                       class="inline-block mt-6 text-[#b4778d] font-bold">
+                        Ver colección →
                     </a>
 
                 </div>
 
 
-                <div class="card-hover bg-slate-50 border border-slate-200 rounded-3xl p-8">
+                <div class="card-hover bg-[#faf6f0] border border-[#eadfd4] rounded-3xl p-8">
 
-                    <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
-                        📚
+                    <div class="w-14 h-14 bg-[#eadbc7] text-[#9a7957] rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        💕
                     </div>
 
-                    <h3 class="text-xl font-bold text-slate-900">
-                        Anillados y plastificados
+                    <h3 class="text-xl font-bold text-[#40373a]">
+                        Parejas
                     </h3>
 
-                    <p class="text-slate-600 mt-3 leading-relaxed">
-                        Dale una mejor presentación y protección
-                        a tus trabajos y documentos.
+                    <p class="text-[#75676c] mt-3 leading-relaxed">
+                        Pijamas para compartir momentos especiales en pareja.
                     </p>
 
-                    <a href="#contacto"
-                       class="inline-block mt-6 text-blue-600 font-bold">
-                        Solicitar servicio →
+                    <a href="#productos"
+                       class="inline-block mt-6 text-[#b4778d] font-bold">
+                        Ver colección →
                     </a>
 
                 </div>
 
 
-                <div class="card-hover bg-slate-50 border border-slate-200 rounded-3xl p-8">
+                <div class="card-hover bg-[#f8f3ee] border border-[#e6ddd4] rounded-3xl p-8">
 
-                    <div class="w-14 h-14 bg-yellow-100 text-yellow-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
-                        🎒
+                    <div class="w-14 h-14 bg-[#e9ddd0] text-[#96765a] rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        🎄
                     </div>
 
-                    <h3 class="text-xl font-bold text-slate-900">
-                        Listas escolares
+                    <h3 class="text-xl font-bold text-[#40373a]">
+                        Navideñas
                     </h3>
 
-                    <p class="text-slate-600 mt-3 leading-relaxed">
-                        Encuentra los productos necesarios para
-                        completar tus listas escolares.
+                    <p class="text-[#75676c] mt-3 leading-relaxed">
+                        Diseños especiales para vivir la temporada navideña con toda la familia.
                     </p>
 
-                    <a href="#contacto"
-                       class="inline-block mt-6 text-blue-600 font-bold">
-                        Cotizar lista →
+                    <a href="#productos"
+                       class="inline-block mt-6 text-[#b4778d] font-bold">
+                        Ver colección →
                     </a>
 
                 </div>
@@ -407,23 +432,22 @@
 
 
     <!-- PRODUCTOS -->
-    <section id="productos" class="py-24 bg-slate-50">
+    <section id="productos" class="py-24 bg-[#faf6f3]">
 
         <div class="max-w-7xl mx-auto px-5 lg:px-8">
 
             <div class="text-center max-w-2xl mx-auto mb-14">
 
-                <span class="text-blue-600 font-bold text-sm uppercase tracking-widest">
+                <span class="text-[#c991a5] font-bold text-sm uppercase tracking-widest">
                     Catálogo
                 </span>
 
-                <h2 class="font-display text-4xl md:text-5xl font-bold text-slate-900 mt-3">
-                    Encuentra lo que necesitas
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-[#40373a] mt-3">
+                    Todo para tus noches
                 </h2>
 
-                <p class="text-slate-600 mt-5 text-lg">
-                    Una variedad de artículos para estudiar,
-                    trabajar, crear y organizarte.
+                <p class="text-[#75676c] mt-5 text-lg">
+                    Descubre nuestros productos y pregunta por tallas, colores y diseños disponibles.
                 </p>
 
             </div>
@@ -431,52 +455,139 @@
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
 
-                <div class="card-hover bg-white rounded-3xl p-7 border border-slate-200 text-center">
-                    <div class="text-5xl mb-5">📓</div>
-                    <h3 class="font-bold text-slate-900">Cuadernos</h3>
-                    <p class="text-sm text-slate-500 mt-2">Cuadernos, blocks y libretas</p>
+                <div class="card-hover bg-white rounded-3xl p-7 border border-[#eadfe2] text-center">
+
+                    <div class="text-5xl mb-5">
+                        👚
+                    </div>
+
+                    <h3 class="font-bold text-[#40373a]">
+                        Pijamas
+                    </h3>
+
+                    <p class="text-sm text-[#8b7c81] mt-2">
+                        Diferentes diseños y tallas
+                    </p>
+
                 </div>
 
-                <div class="card-hover bg-white rounded-3xl p-7 border border-slate-200 text-center">
-                    <div class="text-5xl mb-5">✏️</div>
-                    <h3 class="font-bold text-slate-900">Escritura</h3>
-                    <p class="text-sm text-slate-500 mt-2">Lápices, lapiceros y colores</p>
+
+                <div class="card-hover bg-white rounded-3xl p-7 border border-[#eadfe2] text-center">
+
+                    <div class="text-5xl mb-5">
+                        💕
+                    </div>
+
+                    <h3 class="font-bold text-[#40373a]">
+                        Pijamas de pareja
+                    </h3>
+
+                    <p class="text-sm text-[#8b7c81] mt-2">
+                        Diseños para compartir
+                    </p>
+
                 </div>
 
-                <div class="card-hover bg-white rounded-3xl p-7 border border-slate-200 text-center">
-                    <div class="text-5xl mb-5">🎨</div>
-                    <h3 class="font-bold text-slate-900">Arte</h3>
-                    <p class="text-sm text-slate-500 mt-2">Materiales para tus proyectos</p>
+
+                <div class="card-hover bg-white rounded-3xl p-7 border border-[#eadfe2] text-center">
+
+                    <div class="text-5xl mb-5">
+                        🎄
+                    </div>
+
+                    <h3 class="font-bold text-[#40373a]">
+                        Pijamas navideñas
+                    </h3>
+
+                    <p class="text-sm text-[#8b7c81] mt-2">
+                        Para celebrar en familia
+                    </p>
+
                 </div>
 
-                <div class="card-hover bg-white rounded-3xl p-7 border border-slate-200 text-center">
-                    <div class="text-5xl mb-5">🗂️</div>
-                    <h3 class="font-bold text-slate-900">Oficina</h3>
-                    <p class="text-sm text-slate-500 mt-2">Organización y oficina</p>
+
+                <div class="card-hover bg-white rounded-3xl p-7 border border-[#eadfe2] text-center">
+
+                    <div class="text-5xl mb-5">
+                        🛁
+                    </div>
+
+                    <h3 class="font-bold text-[#40373a]">
+                        Batas
+                    </h3>
+
+                    <p class="text-sm text-[#8b7c81] mt-2">
+                        Comodidad para estar en casa
+                    </p>
+
                 </div>
 
-                <div class="card-hover bg-white rounded-3xl p-7 border border-slate-200 text-center">
-                    <div class="text-5xl mb-5">📐</div>
-                    <h3 class="font-bold text-slate-900">Geometría</h3>
-                    <p class="text-sm text-slate-500 mt-2">Reglas, escuadras y compases</p>
+
+                <div class="card-hover bg-white rounded-3xl p-7 border border-[#eadfe2] text-center">
+
+                    <div class="text-5xl mb-5">
+                        🧖‍♀️
+                    </div>
+
+                    <h3 class="font-bold text-[#40373a]">
+                        Gorros de satén
+                    </h3>
+
+                    <p class="text-sm text-[#8b7c81] mt-2">
+                        Para complementar tu rutina
+                    </p>
+
                 </div>
 
-                <div class="card-hover bg-white rounded-3xl p-7 border border-slate-200 text-center">
-                    <div class="text-5xl mb-5">🖍️</div>
-                    <h3 class="font-bold text-slate-900">Escolar</h3>
-                    <p class="text-sm text-slate-500 mt-2">Útiles para todas las edades</p>
+
+                <div class="card-hover bg-white rounded-3xl p-7 border border-[#eadfe2] text-center">
+
+                    <div class="text-5xl mb-5">
+                        🧦
+                    </div>
+
+                    <h3 class="font-bold text-[#40373a]">
+                        Medias
+                    </h3>
+
+                    <p class="text-sm text-[#8b7c81] mt-2">
+                        Opciones cálidas y cómodas
+                    </p>
+
                 </div>
 
-                <div class="card-hover bg-white rounded-3xl p-7 border border-slate-200 text-center">
-                    <div class="text-5xl mb-5">📎</div>
-                    <h3 class="font-bold text-slate-900">Papelería</h3>
-                    <p class="text-sm text-slate-500 mt-2">Accesorios y complementos</p>
+
+                <div class="card-hover bg-white rounded-3xl p-7 border border-[#eadfe2] text-center">
+
+                    <div class="text-5xl mb-5">
+                        🧺
+                    </div>
+
+                    <h3 class="font-bold text-[#40373a]">
+                        Toallas
+                    </h3>
+
+                    <p class="text-sm text-[#8b7c81] mt-2">
+                        Opciones para regalar
+                    </p>
+
                 </div>
 
-                <div class="card-hover bg-white rounded-3xl p-7 border border-slate-200 text-center">
-                    <div class="text-5xl mb-5">🎁</div>
-                    <h3 class="font-bold text-slate-900">Más productos</h3>
-                    <p class="text-sm text-slate-500 mt-2">Pregunta por disponibilidad</p>
+
+                <div class="card-hover bg-white rounded-3xl p-7 border border-[#eadfe2] text-center">
+
+                    <div class="text-5xl mb-5">
+                        🎁
+                    </div>
+
+                    <h3 class="font-bold text-[#40373a]">
+                        Accesorios
+                    </h3>
+
+                    <p class="text-sm text-[#8b7c81] mt-2">
+                        Pregunta por disponibilidad
+                    </p>
+
                 </div>
 
             </div>
@@ -495,40 +606,48 @@
 
                 <div>
 
-                    <span class="text-blue-600 font-bold text-sm uppercase tracking-widest">
+                    <span class="text-[#c991a5] font-bold text-sm uppercase tracking-widest">
                         Sobre nosotros
                     </span>
 
-                    <h2 class="font-display text-4xl md:text-5xl font-bold text-slate-900 mt-3">
-                        Papelería Malu
+                    <h2 class="font-display text-4xl md:text-5xl font-bold text-[#40373a] mt-3">
+                        La Vaca en Pijama
                     </h2>
 
-                    <p class="text-slate-600 text-lg leading-relaxed mt-6">
-                        Somos una papelería pensada para acompañarte en
-                        tus estudios, trabajo, proyectos y actividades
-                        creativas.
+                    <p class="text-[#75676c] text-lg leading-relaxed mt-6">
+                        Somos una tienda pensada para quienes aman sentirse cómodos,
+                        descansar y disfrutar de productos bonitos para estar en casa.
                     </p>
 
-                    <p class="text-slate-600 leading-relaxed mt-4">
-                        Queremos que encuentres fácilmente lo que necesitas,
-                        con una atención cercana y opciones para diferentes
-                        necesidades.
+                    <p class="text-[#75676c] leading-relaxed mt-4">
+                        Nos encanta ofrecer pijamas, accesorios y detalles que hagan
+                        que tu momento de descanso sea todavía más especial.
                     </p>
 
                     <div class="grid grid-cols-2 gap-5 mt-8">
 
-                        <div class="bg-blue-50 rounded-2xl p-5">
-                            <p class="text-3xl font-extrabold text-blue-600">01</p>
-                            <p class="font-bold text-slate-900 mt-2">
-                                Atención cercana
+                        <div class="bg-[#f9edf1] rounded-2xl p-5">
+
+                            <p class="text-3xl font-extrabold text-[#c991a5]">
+                                01
                             </p>
+
+                            <p class="font-bold text-[#40373a] mt-2">
+                                Diseños bonitos
+                            </p>
+
                         </div>
 
-                        <div class="bg-emerald-50 rounded-2xl p-5">
-                            <p class="text-3xl font-extrabold text-emerald-600">02</p>
-                            <p class="font-bold text-slate-900 mt-2">
-                                Variedad de productos
+                        <div class="bg-[#f8f0e7] rounded-2xl p-5">
+
+                            <p class="text-3xl font-extrabold text-[#9a7957]">
+                                02
                             </p>
+
+                            <p class="font-bold text-[#40373a] mt-2">
+                                Comodidad
+                            </p>
+
                         </div>
 
                     </div>
@@ -536,27 +655,28 @@
                 </div>
 
 
-                <div class="bg-slate-900 rounded-[2rem] p-8 md:p-12 text-white">
+                <div class="bg-[#40373a] rounded-[2rem] p-8 md:p-12 text-white">
 
                     <div class="text-6xl mb-8">
-                        ✏️
+                        🐮
                     </div>
 
                     <h3 class="font-display text-3xl font-bold">
-                        Todo lo que necesitas,
-                        más cerca de ti.
+                        Tu momento de descanso
+                        merece sentirse especial.
                     </h3>
 
-                    <p class="text-slate-300 mt-5 leading-relaxed">
-                        Desde un simple lapicero hasta los materiales
-                        para tu próximo proyecto. Pregunta por nuestros
-                        productos y servicios.
+                    <p class="text-[#d8ced0] mt-5 leading-relaxed">
+                        Elige tu pijama favorita, encuentra ese accesorio que
+                        estabas buscando y disfruta de la comodidad de estar en casa.
                     </p>
 
-                    <a href="https://wa.me/573227010175?text=Hola%20Papeler%C3%ADa%20Malu,%20quisiera%20saber%20qu%C3%A9%20productos%20tienen%20disponibles"
+                    <a href="https://wa.me/5732233506152?text=Hola%20La%20Vaca%20en%20Pijama,%20quiero%20consultar%20por%20sus%20productos"
                        target="_blank"
-                       class="inline-flex mt-8 bg-white text-slate-900 px-6 py-3 rounded-xl font-bold hover:bg-blue-50 transition">
-                        Consultar disponibilidad
+                       class="inline-flex mt-8 bg-white text-[#40373a] px-6 py-3 rounded-xl font-bold hover:bg-[#f9edf1] transition">
+
+                        Consultar productos
+
                     </a>
 
                 </div>
@@ -569,7 +689,7 @@
 
 
     <!-- CONTACTO -->
-    <section id="contacto" class="py-24 bg-blue-600 text-white">
+    <section id="contacto" class="py-24 bg-[#c991a5] text-white">
 
         <div class="max-w-5xl mx-auto px-5 lg:px-8 text-center">
 
@@ -578,31 +698,32 @@
             </div>
 
             <h2 class="font-display text-4xl md:text-6xl font-bold mt-6">
-                ¿Qué necesitas?
+                ¿Qué pijama estás buscando?
             </h2>
 
-            <p class="text-blue-100 text-lg max-w-2xl mx-auto mt-5 leading-relaxed">
-                Escríbenos por WhatsApp para consultar productos,
-                solicitar una cotización o realizar tu pedido.
+            <p class="text-[#f9e8ed] text-lg max-w-2xl mx-auto mt-5 leading-relaxed">
+                Escríbenos por WhatsApp para consultar tallas, colores,
+                diseños disponibles o realizar tu pedido.
             </p>
 
             <div class="mt-9">
 
-                <a href="https://wa.me/573227010175?text=Hola%20Papeler%C3%ADa%20Malu,%20quiero%20hacer%20una%20consulta"
+                <a href="https://wa.me/5732233506152?text=Hola%20La%20Vaca%20en%20Pijama,%20quiero%20hacer%20un%20pedido"
                    target="_blank"
-                   class="inline-flex items-center gap-3 bg-white text-blue-600 px-8 py-4 rounded-xl font-extrabold text-lg hover:bg-blue-50 transition shadow-2xl">
+                   class="inline-flex items-center gap-3 bg-white text-[#c991a5] px-8 py-4 rounded-xl font-extrabold text-lg hover:bg-[#fff7f9] transition shadow-2xl">
 
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M20.52 3.48A11.82 11.82 0 0012.05 0C5.52 0 .2 5.32.2 11.85c0 2.09.55 4.13 1.6 5.92L.1 24l6.38-1.67a11.84 11.84 0 005.57 1.42h.01c6.53 0 11.85-5.32 11.85-11.85a11.82 11.82 0 00-3.39-8.42z"/>
                     </svg>
 
-                    Escribir por WhatsApp
+                    Pedir por WhatsApp
+
                 </a>
 
             </div>
 
-            <p class="text-blue-200 text-sm mt-6">
-                322 701 0175
+            <p class="text-[#f4dfe5] text-sm mt-6">
+                Escríbenos para conocer disponibilidad
             </p>
 
         </div>
@@ -611,7 +732,7 @@
 
 
     <!-- FOOTER -->
-    <footer class="bg-slate-950 text-slate-400">
+    <footer class="bg-[#30292c] text-[#b9adb1]">
 
         <div class="max-w-7xl mx-auto px-5 lg:px-8 py-12">
 
@@ -621,24 +742,19 @@
 
                     <div class="flex items-center gap-3">
 
-                        <div class="w-10 h-10 bg-blue-600 text-white rounded-xl flex items-center justify-center">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                                    d="M4 19.5A2.5 2.5 0 016.5 17H20"/>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                                    d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
-                            </svg>
+                        <div class="w-10 h-10 bg-[#c991a5] text-white rounded-xl flex items-center justify-center text-xl">
+                            🐮
                         </div>
 
                         <p class="text-xl font-bold text-white">
-                            Papelería Malu
+                            La Vaca en Pijama
                         </p>
 
                     </div>
 
                     <p class="mt-5 text-sm leading-relaxed max-w-sm">
-                        Todo lo que necesitas para estudiar,
-                        trabajar y crear.
+                        Pijamas, accesorios y detalles para disfrutar
+                        tus momentos de descanso.
                     </p>
 
                 </div>
@@ -656,8 +772,8 @@
                             Inicio
                         </a>
 
-                        <a href="#servicios" class="hover:text-white transition">
-                            Servicios
+                        <a href="#categorias" class="hover:text-white transition">
+                            Categorías
                         </a>
 
                         <a href="#productos" class="hover:text-white transition">
@@ -676,7 +792,7 @@
                 <div>
 
                     <h3 class="text-white font-bold mb-4">
-                        Contacto
+                        Pedidos
                     </h3>
 
                     <p class="text-sm">
@@ -684,13 +800,15 @@
                     </p>
 
                     <p class="text-white font-bold mt-1">
-                        322 701 0175
+                        Consulta por disponibilidad
                     </p>
 
-                    <a href="https://wa.me/573227010175"
+                    <a href="https://wa.me/5732233506152"
                        target="_blank"
-                       class="inline-block mt-4 text-blue-400 hover:text-blue-300 font-semibold text-sm">
+                       class="inline-block mt-4 text-[#dbaabd] hover:text-[#efcbd7] font-semibold text-sm">
+
                         Escribir ahora →
+
                     </a>
 
                 </div>
@@ -698,10 +816,10 @@
             </div>
 
 
-            <div class="border-t border-slate-800 mt-10 pt-6 text-center text-sm">
+            <div class="border-t border-[#493e42] mt-10 pt-6 text-center text-sm">
 
                 <p>
-                    © 2026 Papelería Malu. Todos los derechos reservados.
+                    © 2026 La Vaca en Pijama. Todos los derechos reservados.
                 </p>
 
             </div>
@@ -712,9 +830,9 @@
 
 
     <!-- BOTÓN FLOTANTE WHATSAPP -->
-    <a href="https://wa.me/573227010175?text=Hola%20Papeler%C3%ADa%20Malu"
+    <a href="https://wa.me/5732233506152?text=Hola%20La%20Vaca%20en%20Pijama"
        target="_blank"
-       class="fixed bottom-5 right-5 z-40 w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center shadow-2xl transition hover:scale-110"
+       class="fixed bottom-5 right-5 z-40 w-14 h-14 bg-[#25D366] hover:bg-[#1ebe5d] text-white rounded-full flex items-center justify-center shadow-2xl transition hover:scale-110"
        aria-label="Contactar por WhatsApp">
 
         <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
@@ -724,7 +842,6 @@
     </a>
 
 
-    <!-- JAVASCRIPT -->
     <script>
 
         const menuBtn = document.getElementById('menu-btn');
@@ -746,3 +863,4 @@
 
 </body>
 </html>
+```
